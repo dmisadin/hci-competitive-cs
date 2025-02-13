@@ -57,7 +57,7 @@ export default function Header() {
                         </svg>
                     </button>
 
-                    <Navigation isSidebar />
+                    <Navigation isSidebar closeSidebar={closeSidebar} />
                 </div>
                 <div className="fixed bg-gray-800 bg-opacity-50 w-full h-full" onClick={closeSidebar}>
 

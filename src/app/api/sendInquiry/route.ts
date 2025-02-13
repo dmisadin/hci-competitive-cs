@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       secure: false,
       auth: {
         user: "ivanakrapovic0@gmail.com",
-        pass: "app password from .env",
+        pass: "qmqb fjle tqnp ipaa",
       },
     });
 

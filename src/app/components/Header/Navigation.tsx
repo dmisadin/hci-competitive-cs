@@ -18,7 +18,7 @@ const getOffers = async () => {
     }
 };
 
-export default function Navigation({ isSidebar = false }) {
+export default function Navigation({ isSidebar = false,  closeSidebar }: { isSidebar?: boolean, closeSidebar?: () => void }) {
     const [offersSubroutes, setOffersSubroutes] = useState<Subroute[]>([]);
     const pathname = usePathname();
 
@@ -61,6 +61,13 @@ export default function Navigation({ isSidebar = false }) {
         },
     ];
 
+    const handleLinkClick = () => {
+        if (isSidebar) {
+            if(closeSidebar)
+                closeSidebar();
+        }
+    };
+
     return (
         <nav className={`h-full ${isSidebar ? "mt-4" : "text-[#616161]"}`}>
             <ul className={`h-full ${isSidebar ? "flex flex-col gap-y-8" : "flex"}`}>
@@ -71,6 +78,7 @@ export default function Navigation({ isSidebar = false }) {
                         <li key={item.name} className={`${!isSidebar ? "h-full" : ""} relative group whitespace-nowrap`}>
                             <Link
                                 href={item.href}
+                                onClick={handleLinkClick}
                                 className={`flex items-center ${styles['nav-route']} block ${
                                     isSidebar
                                         ? "h-16 px-6 text-lg font-bold hover:bg-blue-600 hover:text-white"
@@ -95,6 +103,7 @@ export default function Navigation({ isSidebar = false }) {
                                         <li key={subitem.name}>
                                             <Link
                                                 href={subitem.href}
+                                                onClick={handleLinkClick}
                                                 className={`block ${
                                                     isSidebar
                                                         ? "text-sm hover:underline"
