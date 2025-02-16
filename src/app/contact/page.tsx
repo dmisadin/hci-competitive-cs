@@ -1,10 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope, faClock, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactForm() {
+
+  useEffect(() => {
+              document.title = 'Akrasol - Contact';
+            }, []);
+
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isLoading, setIsLoading] = useState(false);
 

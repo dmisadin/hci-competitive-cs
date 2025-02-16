@@ -2,6 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faSackDollar, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import Section from './components/Header/Section'
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Akrasol - Home',
+    description: 'Welcome to the Akrasol Home page',
+  };
 
 export default function HomePage() {
     return (

@@ -1,6 +1,12 @@
 import { apiUrlBase } from '@/shared/constants';
 import axios from 'axios';
 import { notFound } from 'next/navigation';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Akrasol - Offers',
+    description: 'Welcome to our offers',
+  };
 
 
 const fetchOffer = async (offerId: string) => {

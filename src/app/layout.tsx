@@ -10,7 +10,7 @@ config.autoAddCss = false;
 
 export const metadata: Metadata = {
     title: 'Akrasol',
-    description: 'A great website built with Next.js',
+    description: 'Your place for everything solar',
     icons: {
         icon: '/svg/logo.svg',
     },
@@ -19,6 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
+            <head>
+                <meta name="description" content="Your place for everything solar" />
+                <title>Akrasol</title>
+            </head>
             <body className={`${raleway.className} antialiased flex flex-col min-h-screen bg-white`}>
                 <Header />
                 <main className='flex-grow'>{children}</main>

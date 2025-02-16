@@ -18,6 +18,10 @@ const getOffers = async () => {
 };
 
 export default function OffersLayout({ children }: { children: React.ReactNode }) {
+    useEffect(() => {
+        document.title = 'Akrasol - Offers';
+      }, []);
+
     const [offers, setOffers] = useState<Offer[]>([]);
     
     const pathname = usePathname();

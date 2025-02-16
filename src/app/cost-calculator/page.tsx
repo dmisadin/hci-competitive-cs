@@ -1,9 +1,13 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const CostCalculatorPage = () => {
+    useEffect(() => {
+            document.title = 'Akrasol - Cost Caculator';
+          }, []);
+
     const [step, setStep] = useState(1);
     const totalSteps = 3;
     const [calculatedCost, setCalculatedCost] = useState<number | null>(null);
